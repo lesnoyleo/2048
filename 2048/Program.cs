@@ -130,7 +130,6 @@ namespace _2048
 
         public static int[,] moveDown(int[,] square)
         {
-        Outer:
             for (int i = 0; i < 4; i++)
             {
             
@@ -141,21 +140,18 @@ namespace _2048
                     {
                         square[i + 1, j] += square[i, j];
                         square[i, j] = 0;
-                        goto Outer;
                     }
 
                     if ((square[i, j] != 0) && (i != 3) && (square[i + 1, j] != square[i, j]) && (square[i + 1, j] == 0))
                     {
                         square[i + 1, j] = square[i, j];
                         square[i, j] = 0;
-                        goto Outer;
 
                     }
 
                     if ((square[i, j] != 0) && (i == 3))
                     {
                         square[i, j] = square[i, j];
-                        goto Outer;
 
                     }
                 }
